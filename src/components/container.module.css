@@ -1,0 +1,180 @@
+.fw {
+	margin:0;
+	padding:0;
+}
+.fullcontainer {
+  margin: 0 auto;
+  max-width: 1600px;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.bookBox{
+    flex: 0 0 15%;
+    text-align: center;
+}
+.bookBox img{
+	display: block;
+	margin: 0 auto;
+}
+.bookBox h4{
+    font-size: 16px;
+}
+.poeticalPage{
+    font-family:inherit;
+}
+.sidebarNav{
+    list-style: none;
+    margin: 0px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 5%);
+    border: 1px solid #eee;
+    font-family: 'Jameel Noori Nastaleeq' !important;
+    font-size: 22px;
+}
+.sidebarNav li{
+  margin:0;
+}
+.sidebarNav a{
+    display: block;
+    outline: none;
+    text-shadow: none;
+    text-decoration: none;
+    border: 0;
+    background: none;
+    text-align: right;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+}
+
+
+.poeticalContent .originalText{
+    font-family: 'Jameel Noori Nastaleeq' !important;
+    font-size: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.poeticalContent .originalText p{
+    font-size: 1.3em;
+    line-height: 1.9em;
+    margin: 0 0 25px;
+    text-align: justify;
+    text-align-last: justify;
+}
+.transliterationText{
+    font-family: inherit;
+}
+.englishTranslation{
+    font-family: inherit;
+}
+.wordMeanings{
+    font-family: 'Jameel Noori Nastaleeq' !important;
+    font-size: 20px;
+    color: #555;
+}
+.explanationTashreeh{
+    font-family: inherit;
+}
+.videos{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+.audios{
+    font-family: inherit;
+}
+.audios audio{
+    display: block;
+    width: 100%;
+}
+.audioTitle{
+    font-weight: 500;
+    margin: 0 0 10px;
+    color: #555;
+}
+.wallpapers{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+.wallpaperImage{
+    margin-bottom:30px;
+}
+.pdfs{
+    font-family: inherit;
+}
+.topTabs{
+    font-family: 'Jameel Noori Nastaleeq' !important;
+    font-size: 20px;
+    margin: 0;
+    display: flex;
+    flex-flow: row-reverse wrap;
+    border-bottom: 1px solid #731515;
+}
+
+.centerTableContentInner{
+    margin: 0;
+    text-align: justify;
+    display: table-row;
+    text-align-last: justify;
+}
+.centerTableContent{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+.rightText{
+    text-align: right;
+}
+.centerText{
+    text-align: center;
+}
+.urduFont{
+    font-family: 'Jameel Noori Nastaleeq' !important;
+}
+.TitleSec{
+    font-family: inherit;
+    text-align: center;
+    background:url(/toppattern.png) repeat-x center;
+    background-color: #f8f8f8;
+    padding:25px 0;
+}
+.originalTitleOfPoemGhazelRubai{
+    font-family: inherit;
+}
+.poeticalContent{
+    display: flex;
+    justify-content: space-between;
+    margin:50px 0;
+}
+.mainPoeticalContent{
+    font-family: inherit;
+    flex:0 0 68%;
+}
+.poeticalSidebar{
+    font-family: inherit;
+    flex:0 0 27%;
+}
+.TitleWrap{
+    font-family: inherit;
+}
+.TitleWrap h1{
+    margin:0 0 20px;
+}
+.subTitles{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+}
+.subTitles h2{
+    margin: 0 20px;
+    font-size: 16px;
+    color: #777;
+    font-style: italic;
+    line-height: 1.3;
+}
