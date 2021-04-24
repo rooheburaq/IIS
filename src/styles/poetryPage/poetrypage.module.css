@@ -1,29 +1,10 @@
-.fw {
-	margin:0;
-	padding:0;
-}
-.fullcontainer {
-  margin: 0 auto;
-  max-width: 1600px;
-}
 .container {
   margin: 0 auto;
   max-width: 1200px;
 }
 
-.bookBox{
-    flex: 0 0 15%;
-    text-align: center;
-}
-.bookBox img{
-	display: block;
-	margin: 0 auto;
-}
-.bookBox h4{
-    font-size: 16px;
-}
 .poeticalPage{
-    font-family:inherit;
+    font-family: 'Roboto', sans-serif;
 }
 .poeticalContent .originalText{
     font-family: 'Jameel Noori Nastaleeq' !important;
@@ -40,10 +21,10 @@
     text-align-last: justify;
 }
 .transliterationText{
-    font-family: inherit;
+    font-family: 'Roboto', sans-serif;
 }
 .englishTranslation{
-    font-family: inherit;
+    font-family: 'Roboto', sans-serif;
 }
 .wordMeanings{
     font-family: 'Jameel Noori Nastaleeq' !important;
@@ -81,20 +62,9 @@
 .pdfs{
     font-family: inherit;
 }
-.topTabs{
-    font-family: 'Jameel Noori Nastaleeq' !important;
-    font-size: 20px;
-    margin: 0;
-    display: flex;
-    flex-flow: row-reverse wrap;
-    border-bottom: 1px solid #731515;
-}
-
 .centerTableContentInner{
     margin: 0;
-    text-align: justify;
-    display: table-row;
-    text-align-last: justify;
+    text-align: center;
 }
 .centerTableContent{
     display: flex;
@@ -152,16 +122,19 @@
     font-style: italic;
     line-height: 1.3;
 }
-
 .verseTitle{
+    color:#000;
     font-family: 'Jameel Noori Nastaleeq' !important;
     font-size: 24px;
     margin: 0;
     text-align: center;
     line-height: 1.6;
     cursor: pointer;
-    padding: 0 0 30px;
+    padding: 20px 0;
 }
 .verseTitle p{
     margin:0;
+}
+.sharahBox{
+    font-size:18px;
 }

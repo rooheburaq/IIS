@@ -40,4 +40,5 @@ module.exports = {
     `gatsby-plugin-sharp`, 
     `gatsby-plugin-react-helmet`,
   ],
+  pathPrefix: "/IIS",
 }

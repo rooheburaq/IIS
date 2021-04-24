@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import styles from "../container.module.css"
+import styles from "./sidebar.module.css"
 
 export default function BaangEDaraSidebar({ children }) {
 	    const BaangEDaraMenu = useStaticQuery(

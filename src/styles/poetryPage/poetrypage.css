@@ -1,0 +1,49 @@
+h3.Collapsible__trigger div{
+    position:relative;
+}
+h3.Collapsible__trigger.is-open > div:before{
+    content:"";
+    position:absolute;
+    background:url("../../images/close.png") no-repeat right center;
+    transition: all ease 0.2s;
+    background-size: 100%;
+    opacity: 0.2;
+    width: 23px;
+    height: 23px;
+    right: -100px;
+    top: 36px;
+    image-rendering: pixelated;
+}
+h3.Collapsible__trigger.is-closed:hover > div:before,
+h3.Collapsible__trigger.is-open > div:before{
+    opacity: 0.7;
+    transition:all ease 0.3s;
+}
+h3.Collapsible__trigger.is-closed > div:before{
+    content:"";
+    position:absolute;
+    background:url("../../images/open.png") no-repeat right center;
+    transition: all ease 0.2s;
+    background-size: 100%;
+    opacity: 0.2;
+    width: 23px;
+    height: 23px;
+    right: -100px;
+    top: 23px;
+    image-rendering: pixelated;
+}
+h3.Collapsible__trigger{
+    transition:all ease 0.3s;
+}
+h3.Collapsible__trigger:hover{
+    background: #fafafa;
+    transition:all ease 0.3s;
+}
+h3.Collapsible__trigger.is-open{
+    background: #fafafa;
+}
+h3.Collapsible__trigger.is-open + .Collapsible__contentOuter{
+    padding:20px;
+    margin-bottom:30px;
+    background: #fafafa;
+}

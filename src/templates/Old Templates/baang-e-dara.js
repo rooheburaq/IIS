@@ -1,22 +1,16 @@
 import React from "react"
 import BangEDaraLayout from "../components/layouts/BangEDaraLayout";
 import BaangEDaraSidebar from "../components/sidebars/BaangEDaraSidebar";
-
+import styles from "../components/container.module.css";
 import { graphql, Link } from "gatsby";
 import ReactAudioPlayer from 'react-audio-player';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import Collapsible from 'react-collapsible';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-
-//Styles
-import styles from "../styles/poetryPage/poetrypage.module.css";
-import "../styles/poetryPage/poetrypage.css";
 import '../styles/tabs.css';
 
 export default ({ data }) => {
   const page = data.allWpPage.edges[0].node
   const textal = page.PoeticalPage.contentAlignment;
-  const allVerses = page.PoeticalPage.sherVerseCoupletStanza;
   const transliterationText = page.PoeticalPage.transliterationRomanUrdu;
   const englishTranslation = page.PoeticalPage.englishTranslation;
   const explanationTashreeh = page.PoeticalPage.explanationTashreeh;
@@ -25,17 +19,8 @@ export default ({ data }) => {
   const videos = page.PoeticalPage.videos;
   const pdfs = page.PoeticalPage.pdfFiles;
   const audios = page.PoeticalPage.audios;
-  
-
-  let plainTitles = null
-  let paraLength = null
-  if (allVerses !== null){
-      plainTitles = allVerses.map((item) =>
-      <div dangerouslySetInnerHTML={{ __html: item.originalText}}/>)
-      paraLength = Math.max(...plainTitles.map(item=>item.props.dangerouslySetInnerHTML.__html.length))
-  }
-  paraLength = paraLength+200
-  console.log(page);
+  const allVerses = page.PoeticalPage.sherVerseCoupletStanza;
+  console.log(allVerses);
   let videoURLs = null
   let videoIDS = null
   if(videos !== null){
@@ -69,7 +54,7 @@ export default ({ data }) => {
         <div className={styles.container}>
           <div className={styles.poeticalContent}>
             <div className={styles.mainPoeticalContent} style={{textAlign:`${textal}`}}>
-            <Tabs forceRenderTabPanel={true} className={styles.urduFont}>
+                <Tabs forceRenderTabPanel={true}>
                 <TabList className={styles.topTabs}>
                   <Tab>کلام</Tab>
                   {
@@ -115,55 +100,9 @@ export default ({ data }) => {
                 </TabList>
 
                 <TabPanel>
-                {
-                  allVerses !== null ?
-                  <div className={styles.newLayout}>
-                  {   
-                      allVerses.map((singleSher, i) => 
-                      <Collapsible
-                        trigger={plainTitles[i]}
-                        triggerTagName="h3"
-                        triggerClassName={styles.verseTitle}
-                        triggerOpenedClassName={styles.verseTitle}
-                        transitionTime={200}
-                      >
-                        {
-                          singleSher.transliterationRomanUrdu !== null ?
-                              <div className={`${styles.transliterationText} ${styles.centerTableContent}`}>
-                                <div dangerouslySetInnerHTML={{ __html: singleSher.transliterationRomanUrdu}} />
-                              </div> : null
-                        }
-                        {
-                          singleSher.englishTranslation !== null ?
-                            <div className={`${styles.englishTranslation} ${styles.centerTableContent}`}>
-                              <div className={styles.centerTableContentInner} dangerouslySetInnerHTML={{ __html: singleSher.englishTranslation }} />
-                            </div> : null
-                        }
-                        {
-                          singleSher.wordMeanings !== null ?
-                            <div className={`${styles.wordMeanings} ${styles.rightText}`}>
-                              <div className={styles.urduFont} dangerouslySetInnerHTML={{ __html: singleSher.wordMeanings }} />
-                            </div> : null
-                        }
-                        {
-                          singleSher.explanationTashreehSection !== null ?
-                            <div className={styles.explanationTashreeh}>
-                            {
-                              singleSher.explanationTashreehSection.map((singleSharah) => 
-                                <div className={`${styles.rightText} ${styles.urduFont} ${styles.sharahBox}`}>
-                                  <Collapsible trigger={singleSharah.writerName}>
-                                    <div dangerouslySetInnerHTML={{ __html: singleSharah.explanationTashreeh }} />
-                                  </Collapsible>
-                                </div>
-                              )
-                            }
-                            </div> : null
-                        }
-                      </Collapsible>
-                      )
-                  }
-                  </div> : null
-                }
+                  <div className={styles.originalText}>
+                    <div dangerouslySetInnerHTML={{ __html: page.content }} />
+                  </div>
                 </TabPanel>
                 {
                   transliterationText !== null ?
@@ -260,12 +199,6 @@ export default ({ data }) => {
                   </TabPanel> : null
                 }
               </Tabs>
-            <style dangerouslySetInnerHTML={{__html: `
-                    .Collapsible__trigger div {
-                        text-align-last: justify;
-                        max-width: 293px;
-                        margin: 0px auto;
-                    }`}} />
             </div>
             <div className={styles.poeticalSidebar}>
                 <BaangEDaraSidebar/>
